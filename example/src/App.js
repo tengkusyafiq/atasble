@@ -460,6 +460,19 @@ class App extends React.Component {
                       }
                     />
                     <Button
+                      title={connected ? "unlock" : "lock"}
+                      style={{
+                        backgroundColor: "#22509d"
+                      }}
+                      textStyle={{ color: "#fff" }}
+                      onPress={() =>
+                        this.write(
+                          id,
+                          "This is the test message\r\nDoes it work?\r\nTell me it works!\r\n"
+                        )
+                      }
+                    />
+                    <Button
                       title="Write packets"
                       style={{
                         backgroundColor: "#22509d"
@@ -492,7 +505,7 @@ class App extends React.Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.topBar}>
-          <Text style={styles.heading}>Bluetooth Example</Text>
+          <Text style={styles.heading}>Connect to Device</Text>
           <View style={styles.enableInfoWrapper}>
             <Text style={{ fontSize: 14, color: "#fff", paddingRight: 10 }}>
               {isEnabled ? "ON" : "OFF"}
