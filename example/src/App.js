@@ -7,7 +7,8 @@ import {
   SafeAreaView,
   View,
   ActivityIndicator,
-  Modal
+  Modal,
+  Linking
 } from "react-native";
 
 import Toast from "@remobile/react-native-toast";
@@ -38,6 +39,13 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
+    Linking.getInitialURL()
+      .then(url => {
+        if (url) {
+          console.log("Initial url is: " + url);
+        }
+      })
+      .catch(err => console.error("An error occurred", err));
     this.events = this.props.events;
 
     try {
@@ -446,7 +454,7 @@ class App extends React.Component {
                 />
                 {connected && (
                   <React.Fragment>
-                    <Button
+                    {/* <Button
                       title="Write"
                       style={{
                         backgroundColor: "#22509d"
@@ -458,21 +466,24 @@ class App extends React.Component {
                           "This is the test message\r\nDoes it work?\r\nTell me it works!\r\n"
                         )
                       }
-                    />
+                    /> */}
                     <Button
-                      title={connected ? "unlock" : "lock"}
+                      title="unlock" //{connected ? "unlock" : "lock"}
                       style={{
                         backgroundColor: "#22509d"
                       }}
                       textStyle={{ color: "#fff" }}
-                      onPress={() =>
-                        this.write(
-                          id,
-                          "This is the test message\r\nDoes it work?\r\nTell me it works!\r\n"
-                        )
-                      }
+                      onPress={() => this.write(id, "unlock\r\n")}
                     />
                     <Button
+                      title="lock" //{connected ? "unlock" : "lock"}
+                      style={{
+                        backgroundColor: "#22509d"
+                      }}
+                      textStyle={{ color: "#fff" }}
+                      onPress={() => this.write(id, "lock\r\n")}
+                    />
+                    {/* <Button
                       title="Write packets"
                       style={{
                         backgroundColor: "#22509d"
@@ -484,7 +495,7 @@ class App extends React.Component {
                           "This is the test message\r\nDoes it work?\r\nTell me it works!\r\n"
                         )
                       }
-                    />
+                    /> */}
                   </React.Fragment>
                 )}
                 <Button
