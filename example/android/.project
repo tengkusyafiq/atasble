@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Example</name>
-	<comment>Project android_ created by Buildship.</comment>
+	<name>ATAS BLE</name>
+	<comment>Build to control tracking device.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
