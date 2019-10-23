@@ -473,7 +473,7 @@ class App extends React.Component {
                         backgroundColor: "#22509d"
                       }}
                       textStyle={{ color: "#fff" }}
-                      onPress={() => this.write(id, "85\r\n")}
+                      onPress={() => this.write(id, "FF8523\r\n")}
                     />
                     <Button
                       title="lock" //{connected ? "unlock" : "lock"}
@@ -481,7 +481,7 @@ class App extends React.Component {
                         backgroundColor: "#22509d"
                       }}
                       textStyle={{ color: "#fff" }}
-                      onPress={() => this.write(id, "15\r\n")}
+                      onPress={() => this.write(id, "FF1523\r\n")}
                     />
                     {/* <Button
                       title="Write packets"
