@@ -534,6 +534,16 @@ class App extends React.Component {
                 justifyContent: "center"
               }}
             >
+              <Text
+                style={{
+                  textAlign: "center",
+                  justifyContent: "center"
+                }}
+              >
+                If you are looking for a new device, please pair it first using
+                your phone's bluetooth setting page. Enter the password if
+                needed. The device will be added in this list automatically.
+              </Text>
               <ActivityIndicator
                 style={{ marginBottom: 15 }}
                 size={Platform.OS === "ios" ? 1 : 60}
